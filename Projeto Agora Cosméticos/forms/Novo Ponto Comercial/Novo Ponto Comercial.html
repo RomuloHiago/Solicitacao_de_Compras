@@ -1,0 +1,247 @@
+<html>
+<head>
+	<link type="text/css" rel="stylesheet" href="/style-guide/css/fluig-style-guide.min.css"/>
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/mustache/mustache-min.js"></script>
+	<script type="text/javascript" src="/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
+</head>
+<body>
+<div class="fluig-style-guide">
+<form name="form" role="form">
+
+
+
+			//			REQUISITANTE			//
+
+
+<div class="panel panel-danger">
+	<div class="panel-heading">
+	    <h3 class="panel-title"><span class="fluigicon fluigicon-user fluigicon-md"></span>i18n.translate("Requisitante")</h3> 	
+	</div>
+<div class="panel-body">
+
+
+
+
+
+
+	<div class="row">
+
+	<div class="form-group col-md-6"> 
+		<label for="nome">i18n.translate("nome")</label> 
+		<input type="text" name="nome" class="form-control">
+	</div>
+	
+	<div class="form-group col-md-4">
+		<label for="email">E-mail</label>
+		<input type="email" name="email" id="nome" class="form-control">
+	</div>
+	
+	<div class="form-group col-md-2">
+		<label for="telefone">i18n.translate("Telefone")</label>
+		<input type="telefone" name="telefone" class="form-control">
+		</div>
+	</div>
+	
+	
+	<div class="row">
+	<div class="form-group col-md-3">
+		<label for="DocumentoIdentidade">i18n.translate("DocumentoDeIdentidade")</label>
+		<input type="text" name="DocumentoIdentidade" id="DocumentoIdentidade" class="form-control">
+	</div>
+	<div class="form-group col-md-2">
+		<label for="dataNascimento">i18n.translate("DataDeNascimento")</label>
+		<input type="text" name="dataNascimento" id="dataNascimento" class="form-control">
+		
+	</div>
+</div>
+	</div>
+</div>
+
+
+
+
+
+
+					//			Ponto Comercial			//
+
+
+
+<div class="panel panel-primary">
+	<div class="panel-heading">
+	    <h3 class="panel-title"><span class="flaticon flaticon-pin-map icon-md"></span> Ponto Comercial</h3>
+	</div>
+	
+	<div class="panel-body">
+	
+	
+	
+	<div class="row">
+	
+	
+	<div class="form-group col-md-2">
+	<label> País</label>
+	
+	<select name="pais" id="pais" class="form-control">
+		<option value="Brasil">Brasil</option>
+		<option value="EUA">EUA</option>
+		<option value="Uruguai">Uruguai</option>
+	</select>
+
+
+	</div>	       
+			
+	
+	
+		<div class="form-group col-md-2">
+		<label for="tipoPonto">Tipo do Ponto</label> 
+	<div class="radio">
+		<label><input type="radio" name="tipoPonto" id="tipoPonto" value="quiosque">Quiosque</label>
+		<label><input type="radio" name="tipoPonto" id="tipoPonto" value="loja">Loja</label>       
+	</div>
+</div>
+
+	<div class="form-group col-md-4">
+		<label>Dias de Funcionamento</label>
+		<div class="checkbox">
+		    <label><input type="checkbox" name="domingo">Dom</label>
+		    <label><input type="checkbox" name="segunda">Seg</label>
+		    <label><input type="checkbox" name="terca">Ter</label>
+		    <label><input type="checkbox" name="quarta">Qua</label>
+		    <label><input type="checkbox" name="quinta">Qui</label>
+		    <label><input type="checkbox" name="sexta">Sex</label>
+		    <label><input type="checkbox" name="sabado">Sab</label>
+		  </div>
+		 </div>
+	</div>
+	
+	
+	<div class="row">
+	<div class="form-group col-md-2">
+	    <label for="cep">CEP</label>
+	    <input type="text" name="cep" id="cep" class="form-control" mask="00000-000">
+	</div>
+	<div class="form-group col-md-3">
+	    <label for="logradouro">Logradouro</label>
+	    <input type="text" name="logradouro" id="logradouro" class="form-control">
+	</div>
+	<div class="form-group col-md-1">
+	    <label for="numero">Número</label>
+	    <input type="text" name="numero" id="numero" class="form-control">
+	</div>
+	<div class="form-group col-md-2">
+	    <label for="bairro">Bairro</label>
+	    <input type="text" name="bairro" id="bairro" class="form-control">
+	</div>
+	<div class="form-group col-md-2">
+	    <label for="cidade">Cidade</label>
+	    <input type="text" name="cidade" id="cidade" class="form-control">
+	</div>
+	<div class="form-group col-md-2">
+	    <label for="estado">Estado</label>
+	    <input type="text" name="estado" id="estado" class="form-control">
+	</div>
+</div>
+
+
+
+	<div class="row">		
+		<div class="form-group col-md-12">
+			<label	for="informacoes"> Informações Adicionais </label> 
+			<textarea rows="5" name="informacoes" id="informacoes" class="form-control"></textarea> 
+		</div>
+	
+	</div>	
+	
+	
+	
+	</div>
+</div>
+
+
+					//		RESPONSÁVEIS			//
+
+
+
+			<div class="panel panel-success">
+					<div class="panel-heading">
+					    <h3 class="panel-title"><span class="fluigicon fluigicon-users icon-md"></span> Responsáveis </h3>
+					</div>
+			
+			<div class="panel-body">
+			<table tablename="responsaveisTabela" class="table table-hover" addbuttonlabel="Adicionar Responsável" addbuttonclass="btn btn-success">
+				<thead>
+					<tr>
+						<td>Responsáveis</td>
+					</tr>
+				</thead>			
+				<tbody>
+					<tr>
+						<td>
+							<input
+							type= "zoom"
+							id= "responsavel"
+							name= "responsavel"	
+							data-zoom= "{ 
+									'displayKey':'nome',
+									'datasetId':'dsResponsaveis',
+									'placeholder':'Escolha o usuário',
+									'fields':[
+									       {
+									    	 'field':'login', 
+									    	 'label':'ID'
+									       },{
+									    	 'field':'nome',
+									    	 'label':'Name',
+									    	 'standard':'true'
+									       }
+									     ]
+									}" 
+							/>	
+						</td>
+					</tr>
+				</tbody>
+				
+			</table>
+			
+			
+			
+	</div>
+</div>
+
+
+							//		FINANCEIRO			//   
+							
+<div class="panel panel-info">
+		<div class="panel-heading">
+	    <h3 class="panel-title"><span class="flaticon flaticon-monetization-on icon-md"></span> Financeiro</h3>
+	</div>
+		<div class="panel-body">
+
+		<div class="row">
+		<div class="form-group col-md-2">
+		    <label for="moeda">Moeda</label>
+		    <select  name="moeda" id="moeda" class="form-control" dataset="dsCadMoedas" datasetkey="moeda" datasetvalue="simbolo"> </select> 
+		    						<!-- dataset="dsCadMoedas" esta pegando o forms de cad moedas -->
+		</div>
+		<div class="form-group col-md-2">
+		    <label for="valor">Valor</label>
+		    <input type="number" name="valor" id="valor" class="form-control"> 
+		</div>
+		</div>
+	</div>			
+</div>
+</form>
+</div>
+</body>
+<script type="text/javascript" src="cep.js"></script>
+<script type="text/javascript">
+	var calendarioDataNascimento = FLUIGC.calendar('#dataNascimento');
+</script>
+
+</html>
+
+
+
+
