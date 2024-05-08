@@ -1,0 +1,284 @@
+<html>
+<head>
+    <link type="text/css" rel="stylesheet" href="/style-guide/css/fluig-style-guide.min.css"/>
+    <script type="text/javascript" src="/portal/resources/js/jquery/jquery.js"></script>
+    <script type="text/javascript" src="/portal/resources/js/jquery/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/portal/resources/js/mustache/mustache-min.js"></script>
+    <script type="text/javascript" src="/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/webdesk/vcXMLRPC.js"></script>
+    <script type="text/javascript" src="custom.js" defer></script>
+    <link type="text/css" rel="stylesheet" href="style.css"/>
+    
+</head>
+<body>
+<div class="fluig-style-guide">
+<form name="form" role="form">
+<div style="display:none " >
+<input type="text" id="processState" name="processState"/>
+<input type="text" id="formMode" name="formMode"/>
+ </div>
+
+  <div class="panel panel-default" id="panelSolicitante">
+		  <div class="panel-heading">
+		    <h3 class="panel-title">Solicitante</h3>
+		  </div>
+		
+		  <div class="panel-body">
+		    <div class="row">
+		      <div class="col-md-4">
+		        <div class="form-group">
+		          <label class="control-label" for="txt_number_solicitante">Numero da Solicitação</label>
+		          <input type="text" id="txt_number_solicitante" name="txt_number_solicitante" class="form-control" readonly>
+		        </div>
+		      </div>
+		      <div class="col-md-4">
+		        <div class ="form-group"> 
+		          <label class="control-label" for="txt_solicitante">Nome do Solicitante</label>
+		          <input type="text" id="txt_solicitante" name="txt_solicitante" class="form-control" readonly>
+		        </div>
+		      </div>
+		      <div class="col-md-4">
+		        <div class="form-group">
+		          <label class="control-label" for="txt_dt_solic">Data de abertura da Solicitação</label>
+		          <input type="text" id="txt_dt_solic" name= "txt_dt_solic" class="form-control" readonly>
+		        </div>
+		      </div>
+		    </div>
+		  </div>
+</div>
+		
+	
+	
+<!----------- DADOS DA COTAÇÃO -------------->
+		
+	<div class="panel panel-default" id="paççnelCotacao">
+		    <div class="panel-heading">
+		     <h3 class="panel-title">Dados da Cotação</h3>
+		   </div>
+		    
+		    <div class="panel-body">
+		          <div class="row" id="dataCompra">
+		            <div class="col-md-3">
+		              <div class="form-group">
+		                    <label class="control-label" for="prazo_compra">Prazo necessário para compra</label>
+		                    <input type="date" id="prazo_compra" name="prazo_compra" class="form-control" >
+		              </div>
+		           </div>
+		            1
+		            <div class="col-md-9">
+		              <div class="form-group">
+		                <label class = "control-label" for="justificativa">Motivo/Justificativa da compra</label>
+		                <input type="text" id="justificativa" name="justificativa" class="form-control">
+		              </div>                       
+		            </div>
+		          </div>
+		          
+		          
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<!-- PAI X FILHO -->
+		
+		
+		
+		
+		    
+		<div class="panel-body">
+    <table tablename="tb_produtos"  class="table table-bordered" addbuttonlabel="Adicionar Produto" addbuttonclass="btn btn-primary" nodeletebutton=true>
+       
+        <thead>
+            <tr>
+                <th>Código do Produto</th>
+                <th>Descrição do Produto</th>
+                <th>Unidade de Medida</th>
+                <th>Quantidade</th>
+                <th>Fornecedor</th>
+                <th>Valor Cotado (R$)</th>
+            </tr>
+        </thead>
+        
+        <tbody>
+            <tr>
+            
+                <td>
+                	
+	                   <input type="zoom" id="txt_codigo_produto"  name="txt_codigo_produto" datasetvalue="descricaoProduto" dataset="dsCadastroProdutos" class="form-control" data-zoom=
+	                    "{
+	                    				'displayKey':'codigoProduto',
+										'datasetId':'dsCadPro',
+										'placeholder':'Codigo Produto',
+											'fields':[{
+												'field':'codigoProduto',
+												'label':'codigoProduto',
+												'standard':'true',
+												'search':'true'
+												},
+												{
+												'field':'descricaoProduto',
+												'label':'descricaoProduto',
+												'standard':'true',
+												'search':'true'
+												},	
+												{
+												'field':'unidadeMedida',
+												'label':'unidadeMedida',
+												'standard':'true',
+												'search':'true'
+												}
+																	
+							]}" />					
+                </td>
+			
+                <td >             	
+	                    <input type="zoom" id="txt_descr_produto"  name="txt_descr_produto" datasetvalue="descricaoProduto" dataset="dsCadastroProdutos" class="form-control " data-zoom=
+	                     "{
+	                     				'displayKey':'descricaoProduto',
+										'datasetId':'dsCadastroProdutos',
+										'placeholder':'Descriçâo do produto',
+										'fields':[{
+												'field':'descricaoProduto',
+												'label':'descricaoProduto',
+												'standard':'true',
+												'search':'true'
+												}
+						]}"readonly/>					
+                </td>
+
+                <td >
+               		 
+	                    <input type="zoom" id="txt_unidade_medida" name="txt_unidade_medida" datasetvalue="unidadeMedida" dataset="fluig_cadastro_produto" class="form-control" data-zoom=
+	                     "{'displayKey':'unidadeMedida',
+										'datasetId':'fluig_cadastro_produto',
+										'placeholder':'',
+											'fields':[{
+												'field':'unidadeMedida',
+												'label':'unidadeMedida',
+												'standard':'true',
+												'search':'true'
+												}
+												
+							]}"readonly />				
+                </td>
+
+                <td >
+                    <input type="number" id="txt_quantidade" name="txt_quantidade" class="form-control" />
+                </td>
+
+                <td >
+                	
+						<input type="zoom" id="txt_fornecedor" name="txt_fornecedor" datasetvalue="cnpj" dataset="dsCadastroFornecedor" class="form-control input-zoom" data-zoom=
+                     "{
+                     				'displayKey':'cnpj',
+									'datasetId':'dsCadastroFornecedor',
+									'placeholder':'Escolha o Fornecedor',	
+									'fields':[{
+											'field':'cnpj',
+											'label':'cnpj',
+											'standard':'true',
+											'search':'true'
+											}
+							]}"/>										
+                </td>
+                
+ 
+
+                <td>
+                    <input type="text" id="txt_valor_cotado" name="txt_valor_cotado" class="form-control"  placeholder="0.000.000,00" mask="#.###.##0,00 {reverse:true}" />
+                </td>
+            </tr>
+        </tbody>
+        
+    </table>
+    <input type="hidden" name="total" id="total" value="" />
+</div>
+
+
+ 
+	
+		       
+		       <div class="row">
+		       		<input type="hidden" name="status" id="status" value="" />
+		       		
+		            <div class="col-md-3">	
+		              <div class="form-group">
+		                    <label class="control-label" for="cotado_por">Cotado por</label>
+		                    <input type="text" id="cotado_por" name="cotado_por" class="form-control" readonly>
+		              </div>
+		           </div>
+		            
+		            <div class="col-md-9">
+		              <div class="form-group">
+		                <label class = "control-label" for="dt_cotacao">Data da Cotação</label>
+		                <input type="text" id="dt_cotacao" name="dt_cotacao" class="form-control" readonly>
+		              </div>                       
+		            </div>
+		          </div>
+			 
+		 
+      </div>
+	</div>
+	
+	
+	
+	
+	
+	
+<!------------- APROVAÇÃO ----------------->
+	
+  <div class="panel panel-default" id="panelGestor">
+			  <div class="panel-heading">
+			    <h3 class="panel-title">Aprovação</h3>
+			  </div>
+			  
+			  <div class="panel-body">
+			    <div class="row">
+			    
+					<div class="form-group col-md-3">
+						<label for="tipoApovado">Aprovado?</label> 
+					<div class="radio">
+						<label><input type="radio" name="tipoApovado" id="tipoApovado" value="sim">Sim</label><br>
+						<label><input type="radio" name="tipoApovado" id="tipoApovado" value="nao">Não</label>       
+					</div>
+				</div>
+			      
+			      <div class="col-md-9">
+			        <div class="form-group">
+			          <label class="control-label" for="txt_justificativa_gestor">Observação/Justificativa</label>
+			          <textarea rows="3" cols="10" class="form-control" name="txt_justificativa_gestor" id="txt_justificativa_gestor" placeholder="(Obrigatório, caso não aprovado)"></textarea>
+			        </div>
+			      </div>
+			    </div>
+			    
+			   <div class="row">
+		            <div class="col-md-9">
+		              <div class="form-group">
+		                    <label class="control-label" for="nome_aprovador">Nome do Aprovador</label>
+		                    <input type="text" id="nome_aprovador" name="nome_aprovador" class="form-control" readonly>
+		              </div>
+		           </div>
+		            
+		            <div class="col-md-3">
+		              <div class="form-group">
+		                <label class = "control-label" for="dt_aprovacao">Data da Aprovação</label>
+		                <input type="text" id="dt_aprovacao" name="dt_aprovacao" class="form-control" readonly>
+		              </div>                       
+		            </div>
+		            
+		        </div>
+		 </div>
+	</div>
+
+	    
+		    
+		  
+		</form>
+		</div>		
+		</body>
+		</html>

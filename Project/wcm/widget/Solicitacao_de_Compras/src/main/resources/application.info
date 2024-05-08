@@ -1,0 +1,5 @@
+view.file=view.ftl
+edit.file=edit.ftl
+locale.file.base.name=Solicitacao_de_Compras
+application.resource.js.1=/resources/js/Solicitacao_de_Compras.js
+application.resource.css.2=/resources/css/Solicitacao_de_Compras.css
