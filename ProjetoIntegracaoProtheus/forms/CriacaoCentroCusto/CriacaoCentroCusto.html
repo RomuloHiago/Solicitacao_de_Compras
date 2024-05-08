@@ -1,0 +1,129 @@
+<html>
+<head>
+	<link type="text/css" rel="stylesheet" href="/style-guide/css/fluig-style-guide.min.css"/>
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/mustache/mustache-min.js"></script>
+	<script type="text/javascript" src="/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
+	
+	<script type="text/javascript" src="custom.js" charset="utf-8"></script>
+</head>
+<body>
+	<div class="fluig-style-guide">
+		<form name="form" role="form">
+		
+			<!-- SECAO SOLICITANTE -->
+			<div class="panel panel-primary" id="panelSolicitante">
+				<div class="panel-heading">
+					<h3 class="panel-title">Solicitante</h3>
+				</div>
+
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-md-6">
+							<div class="form-group">
+								<label class="control-label" for="txt_solicitante">Nome completo</label>
+								<input type="text" id="txt_solicitante" name="txt_solicitante" class="form-control" readonly>
+							</div>
+
+						</div>
+						<div class="col-md-4">
+							<div class="form-group">
+								<label class="control-label" for="txt_solic_email">E-mail</label>
+								<input type="text" id="txt_solic_email" name="txt_solic_email" class="form-control" readonly>
+							</div>
+						</div>
+						<div class="col-md-2">
+							<div class="form-group">
+								<label class="control-label" for="txt_dt_solic">Data</label>
+								<input type="text" id="txt_dt_solic" name="txt_dt_solic" class="form-control" readonly>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+			
+			
+			<!-- SECAO DADOS CADASTRAIS DO CLIENTE -->
+			
+			<div class="panel panel-primary" id="panelCadastroCliente">
+				<div class="panel-heading">
+					<h3 class="panel-title">Dados do Cento de Custo</h3>
+				</div>
+
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-md-4">
+							<div class="form-group">
+								<label class="control-label" for="txt_cod_centro_custo">Código</label>
+								<input type="number" id="txt_cod_centro_custo" name="txt_cod_centro_custo" class="form-control">
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="form-group">
+								<label class="control-label" for="txt_nome_centro_custo">Nome</label>
+								<input type="text" id="txt_nome_centro_custo" name="txt_nome_centro_custo" class="form-control">
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="form-group">
+								<label class="control-label" for="txt_classe_centro_custo">Tipo</label>
+								<input type="hidden" name="txt_cod_classe_centro_custo" id="txt_cod_classe_centro_custo">
+								<input type="zoom" id="txt_classe_centro_custo" name="txt_classe_centro_custo" data-zoom="{
+									        'displayKey':'txt_descr_classe',
+									        'datasetId':'ds_cadastro_classe_centro_custo',
+									        'placeholder':'Escolha a classe',
+									        'fields':[
+												{
+													'field':'txt_cod_classe',
+													'label':'Código',
+              										'standard':'true'
+												},{
+									               'field':'txt_descr_classe',
+									               'label':'Descrição'
+									            }
+									        ]
+									     }" />
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			
+			
+			<!-- SECAO GESTOR -->
+			<div class="panel panel-primary" id="panelGestor">
+				<div class="panel-heading">
+					<h3 class="panel-title">Gestor</h3>
+				</div>
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-md-6">
+							<div class="form-group">
+								<label class="control-label" for="txt_justificativa_gestor">Justificativa</label>
+								<textarea rows="5" cols="5" class="form-control" name="txt_justificativa_gestor"
+									id="txt_justificativa_gestor"></textarea>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<label class="control-label">Solicitação aprovada?</label>
+							<div class="custom-radio custom-radio-success">
+								<input type="radio" name="txt_aprov_gestor" value="sim" id="txt_aprov_gestor_sim">
+								<label class="control-label" for="txt_aprov_gestor_sim">Sim</label>
+							</div>
+							<div class="custom-radio custom-radio-danger">
+								<input type="radio" name="txt_aprov_gestor" value="nao" id="txt_aprov_gestor_nao">
+								<label class="control-label" for="txt_aprov_gestor_nao">Não</label>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</form>
+
+	</div>
+</body>
+</html>
